@@ -7,7 +7,9 @@ app.controller("addComment",['$scope', '$firebaseArray', function($scope, $fireb
 	
 	$scope.addComment = function (event) {
 		if (event.keyCode===13 || event.type==="click") {
-			$scope.comments.$add({comment: $scope.comment});
+			var addedDate = Date.now();
+			console.log(addedDate);
+			$scope.comments.$add({comment: $scope.comment, date: addedDate});
 			console.log(event.type);
 		};
 

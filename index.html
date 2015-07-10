@@ -53,7 +53,7 @@
 				<p>This is a special pagagraph</p>
 			</div>
 			<ul>
-				<li ng-repeat="comment in comments" ng-bind="comment.comment"></li>
+				<li ng-repeat="comment in comments">{{comment.date | date}}: {{comment.comment}}</li>
 			</ul>
 			<input type=text ng-model="comment" ng-keydown="addComment($event)">
 			<input type="submit" id="submit" value="Comment" ng-click="addComment($event)">
